@@ -4,9 +4,7 @@ Handles api requests to get data for analyzing stocks. This serves as the primar
 
 ### Endpoints
 
-#### Symbol data
-
-GET /api/data/symbol/:symbol/:dataType
+##### GET /api/data/symbol/:symbol/:dataType
 This gets the locally stored data of symbols from the backend
 ```
 Params
@@ -20,7 +18,7 @@ Returns
 }
 ```
 
-GET /api/data/symbol/list
+##### GET /api/data/symbol/list
 Gets all of the known symbols locally stored in backend
 ```
 Params
@@ -33,7 +31,7 @@ Returns
 }
 ```
 
-GET /api/data-tools/trend-detection/:symbol?maxPeriods=&minPercentChange=
+##### GET /api/data-tools/trend-detection/:symbol?maxPeriods=&minPercentChange=
 Gets trends detected using user defined configuration
 ```
 Params
@@ -55,7 +53,7 @@ Returns
 }
 ```
 
-GET /api/dynamic-conditions/results-by-trends
+##### GET /api/dynamic-conditions/results-by-trends
 Anaylzes known reports generated from using trends found and dynamic conditions
 ```
 Params
