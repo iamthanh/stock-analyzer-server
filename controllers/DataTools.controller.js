@@ -1,7 +1,7 @@
 import { isNumber } from "lodash";
-import { getSymbolDataByType } from "../../dynamicConditions/helper";
-import { findTrendsForSymbol } from "../../ConditionOccurrences/helpers";
-import { DAILY } from "../../../stock-data-collector/technicals/constants";
+import { getSymbolDataByType } from "../../stock-probability-analyzer/dynamicConditions/helper";
+import { findTrendsForSymbol } from "../../stock-probability-analyzer/ConditionOccurrences/helpers";
+import { DAILY } from "../../stock-data-collector/technicals/constants";
 
 class DataToolsController {
   static async getTrendDetectionData(req, res) {

@@ -1,35 +1,17 @@
 import path from "path";
 import { get, isNumber, result, set, sum, values } from "lodash";
-import { getSymbolDataByType } from "../../dynamicConditions/helper";
-import { findTrendsForSymbol } from "../../ConditionOccurrences/helpers";
-import { DAILY } from "../../../stock-data-collector/technicals/constants";
-import { getReportFilesFromFolder } from "../../helpers/csv";
-import { reportPaths } from "../../config";
-import { readJSONFile } from "../../helpers/files";
-import { getConditionsConfigsV2 } from "../../conditionsConfig/v2";
-import { CONDITION_RESULTS_TYPE_DYNAMIC_NUMBER, CONDITION_RESULTS_TYPE_DYNAMIC_NUMBER_WITH_PREFIX, CONDITION_RESULTS_TYPE_STATIC } from "../../conditionsConfig/constants";
-import { NO_DATA } from "../../constants";
+import { getSymbolDataByType } from "../../stock-probability-analyzer/dynamicConditions/helper";
+import { findTrendsForSymbol } from "../../stock-probability-analyzer/ConditionOccurrences/helpers";
+import { DAILY } from "../../stock-data-collector/technicals/constants";
+import { getReportFilesFromFolder } from "../../stock-probability-analyzer/helpers/csv";
+import { reportPaths } from "../../stock-probability-analyzer/config";
+import { readJSONFile } from "../../stock-probability-analyzer/helpers/files";
+import { getConditionsConfigsV2 } from "../../stock-probability-analyzer/conditionsConfig/v2";
+import { CONDITION_RESULTS_TYPE_DYNAMIC_NUMBER, CONDITION_RESULTS_TYPE_DYNAMIC_NUMBER_WITH_PREFIX, CONDITION_RESULTS_TYPE_STATIC } from "../../stock-probability-analyzer/conditionsConfig/constants";
+import { NO_DATA } from "../../stock-probability-analyzer/constants";
 
 class DynamicConditionsController {
   static async getAllByTrendResults(req, res) {
-    // const { symbol } = req.params;
-    // const { maxPeriods = 7, minPercentChange = 5 } = req.query;
-
-    // console.log();
-
-    // Get all of the result files
-
-    // if (symbol) {
-
-    //   let dailyData = await getSymbolDataByType(DAILY, symbol);
-    //   let trendsFound = getDataForTrendDetection(dailyData, maxPeriods, minPercentChange);
-
-    //   if ("limit" in req.query && isNumber(parseInt(req.query.limit))) {
-    //     trendsFound = trendsFound.slice(trendsFound.length - parseInt(req.query.limit));
-    //   }
-
-    //
-
     let reportFolderPath = path.join(__dirname, "../", "../", "../", "reports", reportPaths.dynamicConditionFrequencies);
     let filesFound = await getReportFilesFromFolder(reportFolderPath);
     if (filesFound) {

@@ -1,11 +1,11 @@
 import path from "path";
 import { isNumber } from "lodash";
-import { DATA_TYPE_DAILY } from "../../../stock-data-collector/helper/constants";
-import { getSymbolDataByType } from "../../dynamicConditions/helper";
-import { getStocksFromFolder } from "../../helpers/stockData";
-import config from "../../config";
-import { getTickers } from "../../../stock-data-collector/api/tickers";
-import { DATA_TYPE_FOLDER_MAPPING } from "../../constants";
+import { DATA_TYPE_DAILY } from "../../stock-data-collector/helper/constants";
+import { getSymbolDataByType } from "../../stock-probability-analyzer/dynamicConditions/helper";
+import { getStocksFromFolder } from "../../stock-probability-analyzer/helpers/stockData";
+import config from "../../stock-probability-analyzer/config";
+import { getTickers } from "../../stock-data-collector/api/tickers";
+import { DATA_TYPE_FOLDER_MAPPING } from "../../stock-probability-analyzer/constants";
 
 class SymbolController {
   static async getData(req, res) {

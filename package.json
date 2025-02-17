@@ -1,0 +1,16 @@
+{
+  "name": "stock-analyzer-server",
+  "version": "1.0.0",
+  "description": "The handling of APIs for stockAnalyzer services ",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "esm": "^3.2.25",
+    "express": "^4.21.2",
+    "lodash": "^4.17.21"
+  }
+}
